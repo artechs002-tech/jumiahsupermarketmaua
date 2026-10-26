@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jumiah Supermarket | Groceries, Gas Refill & Delivery in Kenya</title>
+<meta name="description" content="Jumiah supermarket: groceries, gas refill and delivery in Kenya. Choose your items and order on WhatsApp.">
+<meta name="theme-color" content="#1e8e3e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap bar">
+    <a href="#home" class="logo">🧺 Jumiah</a>
+    <nav id="nav" class="nav" aria-label="Main">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#gas">Gas</a><a href="#delivery">Delivery</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" id="openCart" aria-label="Open cart">🛒 Cart (<span id="cartCount">0</span>)</button>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <h1>Fresh groceries &amp; gas, delivered to your door</h1>
+    <p>Pick what you need from Jumiah, send your order on WhatsApp, and we confirm the price and delivery with you.</p>
+    <div class="hero-btns">
+      <a class="btn btn-light" href="#shop">Shop now</a>
+      <a class="btn btn-outline" id="heroWa" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="trust wrap" aria-label="Why shop with us">
+  <div>🚚 <b>Fast delivery</b></div>
+  <div>✅ <b>Quality products</b></div>
+  <div>💰 <b>Affordable prices</b></div>
+  <div>💬 <b>Order via WhatsApp</b></div>
+</section>
+
+<section class="wrap section" id="shop">
+  <h2>Shop our products</h2>
+  <input type="search" id="search" class="search" placeholder="Search for sugar, rice, milk..." aria-label="Search products">
+  <div class="cats" id="cats" role="group" aria-label="Categories"></div>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="noResults" hidden>No products match your search. Try another word or ask us on WhatsApp.</p>
+</section>
+
+<section class="gas" id="gas">
+  <div class="wrap gas-in">
+    <div>
+      <h2>Cooking gas: refill and new cylinders</h2>
+      <p>6kg and 13kg refills, or a new cylinder with gas. Gas refill and delivery available.</p>
+    </div>
+    <div class="hero-btns">
+      <button class="btn btn-light" id="seeGas">See gas prices</button>
+      <a class="btn btn-outline" id="gasWa" href="#" target="_blank" rel="noopener">Order gas on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section" id="delivery">
+  <h2>How delivery works</h2>
+  <ol class="steps">
+    <li><b>Choose items</b><span>Add what you need to your cart.</span></li>
+    <li><b>Send order on WhatsApp</b><span>Your cart opens as a ready message to the shop.</span></li>
+    <li><b>Confirm and receive</b><span>We confirm the price and delivery, then bring your items.</span></li>
+  </ol>
+  <p class="note">Delivery fee depends on your location and will be confirmed on WhatsApp.</p>
+</section>
+
+<section class="wrap section" id="contact">
+  <h2>Contact us</h2>
+  <div class="contact">
+    <form id="contactForm" novalidate>
+      <label>Name<input id="cName" autocomplete="name"><small class="err" id="eName"></small></label>
+      <label>Phone number<input id="cPhone" type="tel" autocomplete="tel"><small class="err" id="ePhone"></small></label>
+      <label>Message<textarea id="cMsg" rows="4"></textarea><small class="err" id="eMsg"></small></label>
+      <button class="btn btn-green" type="submit">Send enquiry on WhatsApp</button>
+    </form>
+    <div class="info">
+      <p>Prefer to talk? Call or message us.</p>
+      <p><a href="tel:0745148038">📞 0745148038</a></p>
+      <p><a id="infoWa" href="#" target="_blank" rel="noopener">💬 Chat on WhatsApp</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot">
+    <div><b>Jumiah</b><p>Supermarket groceries, gas refill and delivery in Kenya.</p></div>
+    <div><a href="#shop">Shop</a> <a href="#gas">Gas</a> <a href="#delivery">Delivery</a> <a href="#contact">Contact</a></div>
+    <div><a href="tel:0745148038">0745148038</a><p>&copy; <span id="year"></span> Jumiah</p></div>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat with Jumiah on WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M5 4h22a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H15l-7 6v-6H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><circle cx="10" cy="13.500" r="1.800" fill="#25d366"/><circle cx="16" cy="13.500" r="1.800" fill="#25d366"/><circle cx="22" cy="13.500" r="1.800" fill="#25d366"/></svg>
+</a>
+
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Your cart" aria-hidden="true">
+  <div class="drawer-head"><h2>Your cart</h2><button id="closeCart" aria-label="Close cart">✕</button></div>
+  <div class="lines" id="lines"></div>
+  <div class="drawer-foot">
+    <div class="total"><span>Total</span><b id="total">KSh 0</b></div>
+    <form id="orderForm" novalidate>
+      <input id="oName" placeholder="Your name" autocomplete="name" aria-label="Your name">
+      <input id="oPhone" type="tel" placeholder="Phone number" autocomplete="tel" aria-label="Phone number">
+      <input id="oLoc" placeholder="Delivery location (estate, area, town)" aria-label="Delivery location">
+      <input id="oNote" placeholder="Order note (optional)" aria-label="Order note">
+      <small class="err" id="orderErr"></small>
+      <button class="btn btn-green" type="submit">Send order on WhatsApp</button>
+      <button class="link" type="button" id="clearCart">Clear cart</button>
+    </form>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
